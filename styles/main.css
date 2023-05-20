@@ -1,0 +1,34 @@
+.heading_title {
+    padding: 5px;
+    text-align: center;
+}
+
+.item_information_expanded {
+    background-color: slategray;
+    color: white;
+    padding: 15px;
+}
+
+.navigation_bar {
+    overflow: hidden;
+    text-align: center;
+}
+
+.navigation_bar a {
+    display: inline-block;
+    float: left;
+    padding: 5px;
+    text-decoration: none;
+    width: 50px;
+}
+
+.navigation_bar a:hover {
+    background-color: green;
+}
+
+.information_table {
+    background-color: yellow;
+    border-radius: 5px;
+    margin: 15px;
+    padding: 15px;
+}
