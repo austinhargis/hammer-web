@@ -5,7 +5,8 @@
 </div>
 
 <div class="navigation_bar">
-    <a href="index.php">Home</a>
+    <a href="home.php">Home</a>
     <a href="https://github.com/austinhargis/hammer-web">GitHub</a>
     <a href="about.php">About</a>
+    <a href="logout.php">Logout</a>
 </div>

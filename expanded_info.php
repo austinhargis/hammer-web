@@ -15,6 +15,10 @@
         }
     }
 
+    if (session_status() === PHP_SESSION_NONE) {
+        header('Location: ./login.php');
+    }
+
 ?>
 
 <html lang="us">

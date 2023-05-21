@@ -3,6 +3,11 @@
     text-align: center;
 }
 
+.home_features {
+    float: left;
+    text-decoration: none;
+}
+
 .item_information_expanded {
     background-color: slategray;
     color: white;
@@ -29,6 +34,7 @@
 .information_table {
     background-color: yellow;
     border-radius: 5px;
+    float: right;
     margin: 15px;
     padding: 15px;
 }
