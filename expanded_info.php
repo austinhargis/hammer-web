@@ -15,9 +15,9 @@
         }
     }
 
-    if (session_status() === PHP_SESSION_NONE) {
-        header('Location: ./login.php');
-    }
+//    if (session_status() === PHP_SESSION_NONE) {
+//        header('Location: ./login.php');
+//    }
 
 ?>
 
@@ -30,6 +30,7 @@
     <body>
         <?php
             include_once "./navigation_bar.php";
+            echo "<input type=\"button\" value=\"Manage Record\" onclick=\"location.href='./record_manage.php?id=$id'\"";
         ?>
 
         <div class="item_information_expanded">

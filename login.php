@@ -17,16 +17,14 @@
             while ($row = mysqli_fetch_assoc($result)) {
                 $db_pass = $row["password"];
             }
-            if ($result->num_rows > 0) {
-                if (password_verify($password, $db_pass)) {
+            if ($result->num_rows > 0) if (password_verify($password, $db_pass)) {
 //                    echo "\n\ncorrect username + password";
 //                    session_start();
-                    $_SESSION['user_barcode'] = $username;
-                    header('Location: ./home.php');
-                }
-                else {
-                    echo "\n\nwrong username/password";
-                }
+                $_SESSION['user_barcode'] = $username;
+                header('Location: ./home.php');
+            }
+            else {
+                echo "\n\nwrong username/password";
             }
             else {
                 echo "\n\nno user like that exists";

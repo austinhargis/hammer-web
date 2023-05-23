@@ -1,11 +1,40 @@
+body {
+    background-color: mintcream !important;
+}
+
+.creation_frame {
+    display: inline-block;
+    margin: 50px auto;
+    padding: 15px;
+    text-align: center;
+}
+
 .heading_title {
     padding: 5px;
     text-align: center;
 }
 
-.home_features {
+#home_features {
+    border-radius: 5px;
+    color: white;
     float: left;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 15px 15px 15px;
     text-decoration: none;
+    width: auto;
+}
+
+#home_features a {
+    border-radius: 5px;
+    color: black;
+    display: inline-block;
+    padding: 5px;
+    text-decoration: none;
+}
+
+#home_features a:hover {
+    background-color: silver;
 }
 
 .item_information_expanded {
@@ -31,10 +60,9 @@
     background-color: green;
 }
 
-.information_table {
-    background-color: yellow;
+#information_table {
     border-radius: 5px;
-    float: right;
-    margin: 15px;
+    height: 100%;
     padding: 15px;
+    width: auto;
 }

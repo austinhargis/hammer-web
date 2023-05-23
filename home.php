@@ -19,51 +19,53 @@
         <?php
             include_once "./navigation_bar.php";
         ?>
+        <div id="body">
+            <div id="home_features">
+                <table>
+                    <tr><td><h3>Checkout</h3></td></tr>
+                    <tr><td><a href="check_in.php">Check In</a></td></tr>
+                    <tr><td><a href="check_out.php">Check Out</a></td></tr>
+                    <tr><td><a href="check_out_view_all.php">View All Checkouts</a></td></tr>
 
-        <div class="home_features">
-            <h3>Checkout</h3>
-            <a href="check_in.php">Check In</a>
-            <a href="check_out.php">Check Out</a>
-            <a href="check_out_view_all.php">View All Checkouts</a>
+                    <tr><td><h3>Locations</h3></td></tr>
+                    <tr><td><a href="location_create.php">Create Location</a></td></tr>
+                    <tr><td><a href="location_manage.php">Manage Location</a></td></tr>
 
-            <h3>Locations</h3>
-            <a href="location_create.php">Create Location</a>
-            <a href="location_manage.php">Manage Location</a>
+                    <tr><td><h3>Message of the Day</h3></td></tr>
+                    <tr><td><a href="motd_create.php">Create MOTD</a></td></tr>
+                    <tr><td><a href="motd_manage.php">Manage MOTD</a></td></tr>
 
-            <h3>Message of the Day</h3>
-            <a href="motd_create.php">Create MOTD</a>
-            <a href="motd_manage.php">Manage MOTD</a>
+                    <tr><td><h3>Records</h3></td></tr>
+                    <tr><td><a href="record_create.php">Create Record</a></td></tr>
+                    <tr><td><a href="record_manage.php">Manage Record</a></td></tr>
 
-            <h3>Records</h3>
-            <a href="record_create.php">Create Record</a>
-            <a href="record_manage.php">Manage Record</a>
+                    <tr><td><h3>Users</h3></td></tr>
+                    <tr><td><a href="user_create.php">Create User</a></td></tr>
+                    <tr><td><a href="user_view_specific.php">View User</a></td></tr>
+                    <tr><td><a href="user_view_all.php">View All Users</a></td></tr>
+                </table>
+            </div>
 
-            <h3>Users</h3>
-            <a href="user_create.php">Create User</a>
-            <a href="user_view_specific.php">View User</a>
-            <a href="user_view_all.php">View All Users</a>
-        </div>
+            <div id="information_table">
+                <table>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Publish Date</th>
+                        <th>Type</th>
+                    </tr>
+                    <?php
 
-        <div class="information_table">
-            <table>
-                <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Publish Date</th>
-                    <th>Type</th>
-                </tr>
-                <?php
+                    $query = "SELECT * FROM item_record";
+                    $result = mysqli_query($connection, $query);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $id = $row['id'];
+                        $title = $row['title'];
+                        $author = $row['author'];
+                        $publish_date = $row['publish_date'];
+                        $type = $row['type'];
 
-                $query = "SELECT * FROM item_record";
-                $result = mysqli_query($connection, $query);
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $id = $row['id'];
-                    $title = $row['title'];
-                    $author = $row['author'];
-                    $publish_date = $row['publish_date'];
-                    $type = $row['type'];
-
-                    echo <<<_END
+                        echo <<<_END
                         <tr onclick="window.location='expanded_info.php?id=$id'">
                             <td>$title</td>
                             <td>$author</td>
@@ -72,15 +74,13 @@
                         </tr>
 
 _END;
-                }
-                ?>
-            </table>
+                    }
+                    ?>
+                </table>
+            </div>
         </div>
 
-
-
     </body>
-
     <footer>
     </footer>
 
